@@ -1,0 +1,12 @@
+# Maven
+/target/
+
+# NetBeans
+/nbproject/private/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
