@@ -21,28 +21,33 @@ public class Java26 {
         int guessX = Integer.valueOf(scan.nextLine());
         System.out.println("Guess the Y position");
         int guessY = Integer.valueOf(scan.nextLine());
-        
+        //Comment for the trial push in github...
         
         do {
             if ((guessX == randomX) || (guessY < randomY)) {
-                System.out.println("STOP! maybe go up... ");
+                System.out.println("STOP!! go up");
             }
             else if ((guessX == randomX) || (guessY > randomY)) {
-                System.out.println("STOP! maybe go down... ");
+                System.out.println("STOP!! go down");
             }
             else if ((guessY == randomY) || (guessX < randomX)) {
-                System.out.println("STOP! maybe go down... ");
+                System.out.println("STOP! go straight forward");
             }
             else if ((guessY == randomY) || (guessX > randomX)) {
-                System.out.println("STOP! maybe go down... ");
+                System.out.println("STOP! go straight back");
             }
-            else if ((guessX == randomX) || (guessY > randomY)) {
-                System.out.println("maybe go down... ");
+            else if ((guessX < randomX) || (guessY < randomY)) {
+                System.out.println("STOP! go down... ");
             }
-            else if ((guessX == randomX) || (guessY > randomY)) {
-                System.out.println("Keep going straight... maybe go down... ");
+            else if ((guessX < randomX) || (guessY > randomY)) {
+                System.out.println("STOP! go down... ");
             }
-            
+            else if ((guessX > randomX) || (guessY < randomY)) {
+                System.out.println("STOP! go down... ");
+            }
+            else if ((guessX > randomX) || (guessY > randomY)) {
+                System.out.println("STOP! go down... ");
+            }     
         }
         
     }
