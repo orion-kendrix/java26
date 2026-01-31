@@ -32,32 +32,32 @@ public class Java26 {
             System.out.println("Chances left:  " + attempts);
             System.out.println("Guess the X position: ");
             int guessX = Integer.parseInt(scan.nextLine());
-            System.out.println("Guess the Y position");
+            System.out.println("Guess the Y position:");
             int guessY = Integer.parseInt(scan.nextLine());                                              //Game
-            if ((guessX == randomX) || (guessY < randomY)) {
+            if ((guessX == randomX) && (guessY < randomY)) {
                 System.out.println("STOP!! go up");
                 attempts--;
-            } else if ((guessX == randomX) || (guessY > randomY)) {
+            } else if ((guessX == randomX) && (guessY > randomY)) {
                 System.out.println("STOP!! go down");
                 attempts--;
-            } else if ((guessY == randomY) || (guessX < randomX)) {
+            } else if ((guessY == randomY) && (guessX < randomX)) {
                 System.out.println("STOP! go straight forward");
                 attempts--;
-            } else if ((guessY == randomY) || (guessX > randomX)) {
+            } else if ((guessY == randomY) && (guessX > randomX)) {
                 System.out.println("STOP! go straight back");
                 attempts--;
-            } else if ((guessX < randomX) || (guessY < randomY)) {
+            } else if ((guessX < randomX) && (guessY < randomY)) {
                 System.out.println(">^");
                 attempts--;
-            } else if ((guessX < randomX) || (guessY > randomY)) {
+            } else if ((guessX < randomX) && (guessY > randomY)) {
                 System.out.println(">!");
-            } else if ((guessX > randomX) || (guessY < randomY)) {
+            } else if ((guessX > randomX) && (guessY < randomY)) {
                 System.out.println("^<");
                 attempts--;
-            } else if ((guessX > randomX) || (guessY > randomY)) {
+            } else if ((guessX > randomX) && (guessY > randomY)) {
                 System.out.println("!<");
                 attempts--;
-            } else if ((guessX > randomX) || (guessY > randomY)) {
+            } else if ((guessX > randomX) && (guessY > randomY)) {
                 System.out.println("You win!! Hooray!!");
             }
         } while (attempts > 0);
