@@ -14,8 +14,8 @@ public class Java26 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int randomX = ThreadLocalRandom.current().nextInt(-100, 101);
-        int randomY = ThreadLocalRandom.current().nextInt(-100, 101);
+        int randomX = ThreadLocalRandom.current().nextInt(-10, 11);
+        int randomY = ThreadLocalRandom.current().nextInt(-10, 11);
         int attempts = 0;
         int count = 0;
         int[] dataX = new int[100];
@@ -40,66 +40,47 @@ public class Java26 {
             System.out.println("Guess the X position: ");
             int guessX = Integer.parseInt(scan.nextLine());
             System.out.println("Guess the Y position:");
-            int guessY = Integer.parseInt(scan.nextLine());                                              //Game
+            int guessY = Integer.parseInt(scan.nextLine());
+            
+            dataX[count] = guessX;
+            dataY[count] = guessY;
+            count++;
+            
             if ((guessX == randomX) && (guessY < randomY)) {
                 System.out.println("STOP!! go up");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX == randomX) && (guessY > randomY)) {
                 System.out.println("STOP!! go down");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessY == randomY) && (guessX < randomX)) {
                 System.out.println("STOP! go straight forward");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessY == randomY) && (guessX > randomX)) {
                 System.out.println("STOP! go straight back");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX < randomX) && (guessY < randomY)) {
                 System.out.println(">^");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX < randomX) && (guessY > randomY)) {
                 System.out.println(">!");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX > randomX) && (guessY < randomY)) {
                 System.out.println("<^");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX > randomX) && (guessY > randomY)) {
                 System.out.println("<!");
                 attempts--;
-                count++;
-                dataX[count] = guessX;
-                dataY[count] = guessY;
                 System.out.println("Attempts left:  " + attempts);
             } else if ((guessX == randomX) && (guessY == randomY)) {
                 System.out.println("You win!! Hooray!!");
-                System.out.println("It only took you " + (score - attempts) + " attempts to win!!");
+                System.out.println("It only took you " + (score - attempts + 1) + " attempts to win!!");
                 break;
             }
         } while (attempts > 0);
@@ -109,7 +90,7 @@ public class Java26 {
         
         System.out.println("All of your coordinates: ");
         for (int i = 0;i < count;i++) {
-            System.out.println(i + "(" + dataX[i] + "," + dataY[i] + ")");
+            System.out.println((i + 1) + "(" + dataX[i] + "," + dataY[i] + ")");
         }
     }
 } 
